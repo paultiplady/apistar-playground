@@ -1,0 +1,20 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "0584186c9a615e0fec6be90d95572d7b310b44a93093d5f0f8ed035540a46004"
+        },
+        "requires": {},
+        "sources": [
+            {
+                "url": "https://pypi.python.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "SQLAlchemy": "*",
+        "apistar": "*",
+        "psycopg2": "*"
+    },
+    "develop": {}
+}
