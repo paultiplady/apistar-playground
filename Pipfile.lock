@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0584186c9a615e0fec6be90d95572d7b310b44a93093d5f0f8ed035540a46004"
+            "sha256": "f92beea998b5de893ef12435036402518fb773feb4bd0a34ca0cd23c9e969b8e"
         },
         "requires": {},
         "sources": [
@@ -16,5 +16,7 @@
         "apistar": "*",
         "psycopg2": "*"
     },
-    "develop": {}
+    "develop": {
+        "alembic": "*"
+    }
 }
