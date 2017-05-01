@@ -1,0 +1,19 @@
+language: python
+python:
+  - '3.5.2'
+
+before_script:
+  - psql -c 'create database apistar;' -U postgres
+
+env:
+  - DATABASE_URL=postgres://postgres:@localhost/apistar
+
+#install:
+#  - make
+
+# http://docs.pipenv.org/en/latest/advanced.html
+script:
+  - apistar test
+
+services:
+  - postgresql

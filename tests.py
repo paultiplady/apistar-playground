@@ -6,7 +6,7 @@ from app import welcome, app
 
 
 @pytest.fixture
-def clear_db(scope="function"):
+def reset_db(scope="function"):
     db_backend = SQLAlchemy.build(app.settings)
     db_backend.drop_tables()
     db_backend.create_tables()
