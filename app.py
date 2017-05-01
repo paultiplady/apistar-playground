@@ -2,7 +2,7 @@ import logging
 import json
 from uuid import uuid4
 
-from apistar import App, Route, schema, http
+from apistar import App, Route, schema, http, environment
 from apistar.backends import SQLAlchemy
 from sqlalchemy import String
 from sqlalchemy.dialects.postgresql import UUID
@@ -56,11 +56,20 @@ routes = [
     Route('/beers/', 'POST', create_beer),
 ]
 
+
+class Env(environment.Environment):
+    properties = {
+        'DATABASE_URL': schema.String(default='postgresql://paul:paul@localhost/apistar')
+    }
+
+env = Env()
+print('Using DB URL: ', env['DATABASE_URL'])
+
 app = App(
     routes=routes,
-    settings = {
+    settings={
         "DATABASE": {
-            "URL": "postgresql://paul:paul@localhost/apistar",
+            "URL": env['DATABASE_URL'],
             "METADATA": Base.metadata,
         }
     }
